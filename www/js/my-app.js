@@ -16,6 +16,7 @@ var app = new Framework7({
   routes: [
 
     { path: '/registro/', url: 'registro.html', },
+    { path: '/inicio/', url: 'inicio.html', },
 
   ]
   // ... other parameters
@@ -143,7 +144,7 @@ function fnLogin() {
 
 
 $$(document).on('page:init', '.page[data-name="registro"]', function (e) {
- 
+
   $$("#boton").on("click", (e) => fnRegistro(e));
   //REGISTER//
   // cada un@ pone su magia para recuperar el mail y la clave de un form...
@@ -181,47 +182,47 @@ $$(document).on('page:init', '.page[data-name="registro"]', function (e) {
     RAPELLIDO = $$('#rApellido').val();
     console.log(RMAIL + 'mail')
     console.log(RCONTRA)
-     firebase.auth().createUserWithEmailAndPassword(RMAIL, RCONTRA)
-       .then((userCredential) => {
-         // Signed in
-         var user = userCredential.user;
-         //console.log("Bienvenid@!!! " + MAIL); 
-         // ...
-         //mainView.router.navigate('/siguientePantallaDeUsuarioOK/');
- 
- 
-         claveDeColeccion = RMAIL;
- 
- 
-         datos = {
-           nombre: NOMBRE,
-           apellido: APELLIDO,
-           rol: "usuario"
-         }
- 
-         colUsuario.doc(claveDeColeccion).set(datos)
-           .then(() => {
-             console.log("Document successfully written!");
-           })
-           .catch((error) => {
-             console.error("Error writing document: ", error);
-           });
- 
- 
-       })
-       .catch((error) => {
-         var errorCode = error.code;
-         var errorMessage = error.message;
- 
-         console.error(errorCode);
-         console.error(errorMessage);
- 
-         if (errorCode == "auth/email-already-in-use") {
-           console.error("el mail ya esta usado");
-         }
- 
-         // ..
-       });
+    firebase.auth().createUserWithEmailAndPassword(RMAIL, RCONTRA)
+      .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+        //console.log("Bienvenid@!!! " + MAIL); 
+        // ...
+        //mainView.router.navigate('/siguientePantallaDeUsuarioOK/');
+
+
+        claveDeColeccion = RMAIL;
+
+
+        datos = {
+          nombre: NOMBRE,
+          apellido: APELLIDO,
+          rol: "usuario"
+        }
+
+        colUsuario.doc(claveDeColeccion).set(datos)
+          .then(() => {
+            console.log("Document successfully written!");
+          })
+          .catch((error) => {
+            console.error("Error writing document: ", error);
+          });
+
+
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+
+        console.error(errorCode);
+        console.error(errorMessage);
+
+        if (errorCode == "auth/email-already-in-use") {
+          console.error("el mail ya esta usado");
+        }
+
+        // ..
+      });
 
 
 

@@ -1,0 +1,36 @@
+.bienvenido{
+    display: inline-block;
+    background-color: #AB0501;
+    padding: 2px 15px 2px 80px;
+    position: relative;
+    bottom  : 60px;
+    box-shadow: rgba(0, 0, 0, 1) 0px 14px 25px, rgba(0, 0, 0, 0.50) 0px 10px 10px;
+    text-align: right;
+    
+
+    
+
+
+}
+
+.imagen {
+    width: 100vw;
+    height: 50vh;
+}
+
+.titulo {
+    margin-left: 15px;
+
+}
+
+
+.foto-servicio{
+    width: 80%;
+    height: 50%;s
+}
+
+.col {
+    text-align: center;
+    font-size: 15px;
+
+}
