@@ -17,6 +17,7 @@ var app = new Framework7({
 
     { path: '/registro/', url: 'registro.html', },
     { path: '/inicio/', url: 'inicio.html', },
+    { path: '/turnos/', url: 'turnos.html', },
 
   ]
   // ... other parameters
@@ -46,6 +47,39 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
   var MAIL = document.getElementById("#rMail");
   var CONTRA = document.getElementById("#rContra");
 
+  /* firebase.auth().signInWithEmailAndPassword(MAIL, CONTRA)
+    .then((userCredential) => {
+      // Signed in
+      var user = userCredential.user;
+
+      console.log("Bienvenid@!!! " + MAIL);
+      // ...
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      console.error(errorCode);
+      console.error(errorMessage);
+    }); */
+
+})
+$$(document).on('page:init', '.page[data-name="inicio"]', function (e) {
+  // Do something here when page with data-name="about" attribute loaded and initialized
+  //console.log(e);
+  // alert('Hello');
+  //LOGIN//
+
+  // cada un@ pone su magia para recuperar el mail y la clave de un form...
+/*   var MAIL = document.getElementById("#rMail");
+  var CONTRA = document.getElementById("#rContra"); */
+  $$('#btnRedireccion').on('click', fnRedireccionInput)
+  
+  function fnRedireccionInput(){
+    mainView.router.navigate('/turnos/')
+
+
+  }
   /* firebase.auth().signInWithEmailAndPassword(MAIL, CONTRA)
     .then((userCredential) => {
       // Signed in

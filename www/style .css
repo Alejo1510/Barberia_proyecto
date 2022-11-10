@@ -6,11 +6,6 @@
     bottom  : 60px;
     box-shadow: rgba(0, 0, 0, 1) 0px 14px 25px, rgba(0, 0, 0, 0.50) 0px 10px 10px;
     text-align: right;
-    
-
-    
-
-
 }
 
 .imagen {
@@ -20,17 +15,23 @@
 
 .titulo {
     margin-left: 15px;
-
 }
 
 
 .foto-servicio{
     width: 80%;
-    height: 50%;s
+    height: 50%;
+    opacity: 1;
+    border-radius: 2em;
+}
+.foto-servicio:hover {
+    opacity: 0.8;
+    transition: 0.5s;
 }
 
-.col {
+.row {
+    display: flex;
     text-align: center;
-    font-size: 15px;
-
 }
+
+
